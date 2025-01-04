@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <title>CV Mate Form</title>
+  </head>
+  <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">CV Mate Form</h1>
+        </div>
+      </div>
+    </section>
+
+    <form id="cv-form" action="" class="container m-4 pl-4" method="POST">
+
+      <!-- Personal Information -->
+      <h2 class="title is-4">Personal Information</h2>
+      <div class="field">
+      <label class="label" for="full_name">Full Name</label>
+      <div class="control">
+        <input class="input" type="text" id="full_name" name="full_name" placeholder="Full Name" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="phone_number">Phone Number</label>
+      <div class="control">
+        <input class="input" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="email_address">Email Address</label>
+      <div class="control">
+        <input class="input" type="email" id="email_address" name="email_address" placeholder="Email Address" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="linkedin_profile">LinkedIn Profile URL (if applicable)</label>
+      <div class="control">
+        <input class="input" type="url" id="linkedin_profile" name="linkedin_profile" placeholder="LinkedIn Profile URL" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="portfolio_website">Portfolio Website URL (if applicable)</label>
+      <div class="control">
+        <input class="input" type="url" id="portfolio_website" name="portfolio_website" placeholder="Portfolio Website URL" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="date_of_birth">Date of Birth</label>
+      <div class="control">
+        <input class="input" type="date" id="date_of_birth" name="date_of_birth" />
+        <p class="help">Include a disclaimer about potential discrimination</p>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="current_address">Current Address</label>
+      <div class="control">
+        <input class="input" type="text" id="current_address" name="current_address" placeholder="Current Address" />
+        <label class="checkbox">
+        <input type="checkbox" id="hide_address" name="hide_address" />
+        Hide on CV
+        </label>
+      </div>
+      </div>
+
+      <!-- Career Goals -->
+      <h2 class="title is-4">Career Goals</h2>
+      <div class="field">
+      <label class="label" for="desired_job_title">Desired Job Title/Role</label>
+      <div class="control">
+        <input class="input" type="text" id="desired_job_title" name="desired_job_title" placeholder="Desired Job Title/Role" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="industry_interest">Industry of Interest</label>
+      <div class="control">
+        <input class="input" type="text" id="industry_interest" name="industry_interest" placeholder="Industry of Interest" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="career_goals">Career Goals for the Next 5 Years</label>
+      <div class="control">
+        <textarea class="textarea" id="career_goals" name="career_goals" placeholder="Career Goals for the Next 5 Years"></textarea>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="salary_expectations">Salary Expectations (Optional)</label>
+      <div class="control">
+        <input class="input" type="text" id="salary_expectations" name="salary_expectations" placeholder="Salary Expectations" />
+        <p class="help">Include a disclaimer about potential negotiation</p>
+      </div>
+      </div>
+
+      <!-- Education -->
+      <h2 class="title is-4">Education</h2>
+      <div class="field">
+      <label class="label" for="highest_education">Highest Level of Education</label>
+      <div class="control">
+        <input class="input" type="text" id="highest_education" name="highest_education" placeholder="Highest Level of Education" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="major_degree">Major/Degree</label>
+      <div class="control">
+        <input class="input" type="text" id="major_degree" name="major_degree" placeholder="Major/Degree" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="university_name">University/Institution Name</label>
+      <div class="control">
+        <input class="input" type="text" id="university_name" name="university_name" placeholder="University/Institution Name" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="graduation_date">Graduation Date (or Expected Graduation Date)</label>
+      <div class="control">
+        <input class="input" type="date" id="graduation_date" name="graduation_date" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="gpa">GPA (Optional)</label>
+      <div class="control">
+        <input class="input" type="text" id="gpa" name="gpa" placeholder="GPA" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="relevant_coursework">Relevant Coursework</label>
+      <div class="control">
+        <textarea class="textarea" id="relevant_coursework" name="relevant_coursework" placeholder="List key courses or areas of study"></textarea>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="academic_honors">Dean's List/Academic Honors (if applicable)</label>
+      <div class="control">
+        <textarea class="textarea" id="academic_honors" name="academic_honors" placeholder="Dean's List/Academic Honors"></textarea>
+      </div>
+      </div>
+
+      <!-- Work Experience -->
+      <h2 class="title is-4">Work Experience</h2>
+      <div id="work-experience-container">
+      <div class="work-experience">
+        <div class="field">
+      <label class="label" for="job_title[]">Job Title</label>
+      <div class="control">
+        <input class="input" type="text" id="job_title[]" name="job_title[]" placeholder="Job Title" />
+      </div>
+        </div>
+        <div class="field">
+      <label class="label" for="company_name[]">Company Name</label>
+      <div class="control">
+        <input class="input" type="text" id="company_name[]" name="company_name[]" placeholder="Company Name" />
+      </div>
+        </div>
+        <div class="field">
+      <label class="label" for="employment_dates[]">Dates of Employment</label>
+      <div class="control">
+        <input class="input" type="text" id="employment_dates[]" name="employment_dates[]" placeholder="Dates of Employment" />
+      </div>
+        </div>
+        <div class="field">
+      <label class="label" for="job_description[]">Job Description</label>
+      <div class="control"></div>
+        <textarea class="textarea" id="job_description[]" name="job_description[]" placeholder="Use bullet points to describe key responsibilities and achievements. Quantify your accomplishments whenever possible - e.g., 'Increased sales by 15%', 'Managed a team of 5', 'Reduced costs by 10%'"></textarea>
+      </div>
+        </div>
+      </div>
+      </div>
+      <div class="field mt-5"></div>
+      <div class="control">
+        <button type="button" class="button is-link" onclick="addWorkExperience()">Add Another Work Experience</button>
+      </div>
+      </div>
+      <div class="field mt-5"></div>
+
+      <!-- Skills -->
+      <h2 class="title is-4">Skills</h2>
+      <div class="field">
+      <label class="label" for="technical_skills">Technical Skills</label>
+      <div class="control">
+        <textarea class="textarea" id="technical_skills" name="technical_skills" placeholder="e.g., Programming languages, software proficiency, data analysis tools"></textarea>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="soft_skills">Soft Skills</label>
+      <div class="control"></div>
+        <textarea class="textarea" id="soft_skills" name="soft_skills" placeholder="e.g., Communication, teamwork, leadership, problem-solving, critical thinking, time management"></textarea>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="languages">Languages</label>
+      <div class="control">
+        <textarea class="textarea" id="languages" name="languages" placeholder="List languages and proficiency level - e.g., Fluent, Conversational, Basic"></textarea>
+      </div>
+      </div>
+
+      <!-- Awards and Recognition -->
+      <h2 class="title is-4">Awards and Recognition</h2>
+      <div class="field">
+      <label class="label" for="awards">Awards, Scholarships, or Professional Certifications</label>
+      <div class="control">
+        <textarea class="textarea" id="awards" name="awards" placeholder="List any awards, scholarships, or professional certifications you have received"></textarea>
+      </div>
+      </div>
+
+      <!-- Volunteer Experience -->
+      <h2 class="title is-4">Volunteer Experience (Optional)</h2>
+      <div class="field">
+      <label class="label" for="volunteer_organization">Organization Name</label>
+      <div class="control">
+        <input class="input" type="text" id="volunteer_organization" name="volunteer_organization" placeholder="Organization Name" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="volunteer_dates">Dates of Involvement</label>
+      <div class="control"></div>
+        <input class="input" type="text" id="volunteer_dates" name="volunteer_dates" placeholder="Dates of Involvement" />
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="volunteer_description">Description of Roles and Responsibilities</label>
+      <div class="control">
+        <textarea class="textarea" id="volunteer_description" name="volunteer_description" placeholder="Description of Roles and Responsibilities"></textarea>
+      </div>
+      </div>
+
+      <!-- Interests and Hobbies -->
+      <h2 class="title is-4">Interests and Hobbies (Optional)</h2>
+      <div class="field">
+      <label class="label" for="interests">Hobbies or Interests</label>
+      <div class="control"></div>
+        <textarea class="textarea" id="interests" name="interests" placeholder="List any hobbies or interests (e.g., Sports, music, travel, reading)"></textarea>
+      </div>
+      </div>
+
+      <!-- References -->
+      <h2 class="title is-4">References</h2>
+      <div class="field">
+      <label class="label">Will you provide a list of references upon request?</label>
+      <div class="control">
+        <label class="radio">
+        <input type="radio" id="provide_references_yes" name="provide_references" value="yes" />
+        Yes
+        </label>
+        <label class="radio">
+        <input type="radio" id="provide_references_no" name="provide_references" value="no" />
+        No
+        </label>
+      </div>
+      </div>
+      <div class="field">
+      <label class="label" for="references">References (if applicable)</label>
+      <div class="control">
+        <textarea class="textarea" id="references" name="references" placeholder="Provide contact information (name, title, company, phone, email) for at least 3 professional references"></textarea>
+      </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="field">
+      <div class="control">
+        <button class="button is-primary" type="submit" id="submit">Submit</button>
+      </div>
+      </div>
+    </form>
+
+    <!-- Alert element -->
+    <div class="notification is-primary alert" style="display: none;">
+      <button class="delete"></button>
+      Form submitted successfully!
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="main.js"></script>
+    
+  </body>
+</html>
